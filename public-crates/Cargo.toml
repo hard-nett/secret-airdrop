@@ -16,20 +16,20 @@ repository = "https://https://github.com/permissionlessweb/cw-headstash/public-c
 version = "2.0.0"
 
 [workspace.dependencies]
-polytone-proxy = { path = "contracts/polytone/proxy" }
-polytone-voice = { path = "contracts/polytone/voice"}
-polytone-note = { path = "contracts/polytone/note"}
-polytone = { path = "packages/polytone" }
+polytone-proxy = { package = "abstract-polytone-proxy", path = "../../polytone/contracts/main/proxy" }
+polytone-voice = { package = "abstract-polytone-voice", path = "../../polytone/contracts/main/voice" }
+polytone-note = { package = "abstract-polytone-note", path = "../../polytone/contracts/main/note" }
+polytone = { package = "abstract-polytone", path = "../../polytone/packages/polytone" }
 
 
-cosmos-sdk-proto = { version = "0.23", default-features = false, features = ["cosmwasm", "std"] }
+cosmos-sdk-proto = { path = "../../cosmos-rust/cosmos-sdk-proto" }
 cosmwasm-std = { version = "2.2.2", features = ["cosmwasm_1_4", "stargate"] }
 cosmwasm-schema = "2.2.2"
 cw-storage-plus = "2.0.0"
-cw-utils = "2.0.0"
+cw-utils = { path = "../../cw-minus/packages/cw-utils" }
 cw-orch = { version = "0.28.0" }
 cw-orch-interchain = { version = "0.9.0", features = ["daemon"] }
-cw2 = "2.0"
+cw2 = { path = "../../cw-minus/packages/cw2" }
 cw-multi-test = "2.1.1"
 
 anyhow = { version = "1.0.51" }
